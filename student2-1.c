@@ -171,6 +171,7 @@ void dead() {
         fileOpen("/Users/knuprime104/Desktop/OS/tired.txt");
         fileOpen("/Users/knuprime104/Desktop/OS/tired2.txt");
         fileOpen("/Users/knuprime104/Desktop/OS/tired3.txt");
+        
     }
     
     else if(iq <= 0) {
@@ -194,7 +195,9 @@ void dead() {
         fileOpen("/Users/knuprime104/Desktop/OS/lonely6.txt");
     }
     
+    fileOpen("/Users/knuprime104/Desktop/OS/ending.txt");
     endwin();
+
 }
 
 void home() {
@@ -326,6 +329,8 @@ void choice() {
             fileOpen("/Users/knuprime104/Desktop/OS/success7.txt");
             fileOpen("/Users/knuprime104/Desktop/OS/success8.txt");
             fileOpen("/Users/knuprime104/Desktop/OS/success9.txt");
+            fileOpen("/Users/knuprime104/Desktop/OS/ending.txt");
+            endwin();
         }
         
         else {
@@ -335,6 +340,8 @@ void choice() {
             fileOpen("/Users/knuprime104/Desktop/OS/fail4.txt");
             fileOpen("/Users/knuprime104/Desktop/OS/fail5.txt");
             fileOpen("/Users/knuprime104/Desktop/OS/fail6.txt");
+            fileOpen("/Users/knuprime104/Desktop/OS/ending.txt");
+            endwin();
         }
     }
     
@@ -354,6 +361,8 @@ void choice() {
         fileOpen("/Users/knuprime104/Desktop/OS/global13.txt");
         fileOpen("/Users/knuprime104/Desktop/OS/global14.txt");
         fileOpen("/Users/knuprime104/Desktop/OS/global15.txt");
+        fileOpen("/Users/knuprime104/Desktop/OS/ending.txt");
+        endwin();
     }
     
     else if(choice == '3') {
@@ -376,7 +385,9 @@ void choice() {
         fileOpen("/Users/knuprime104/Desktop/OS/tired.txt");
         fileOpen("/Users/knuprime104/Desktop/OS/tired2.txt");
         fileOpen("/Users/knuprime104/Desktop/OS/tired3.txt");
-
+        
+        fileOpen("/Users/knuprime104/Desktop/OS/ending.txt");
+        endwin();
     }
     
 }
