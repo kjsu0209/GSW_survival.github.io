@@ -2,6 +2,7 @@
 #include <curses.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 //cc freshman.c -o freshman -lcurses
 
@@ -10,21 +11,30 @@
 int hp = 100, iq = 0;
 
 void fileOpen(char fname[]) {
-    char statement[10000];
-    int i=0;
-    FILE *fp = fopen(fname, "r");
     
-    while(!feof(fp)) {
-        fscanf(fp, "%c", &statement[i++]);
-    }
+    int fd;
+    char ch;
     
-    addstr(statement);
+    fd = open(fname, O_RDONLY );  // 읽기 전용을 파일을 연다.
+    
+    while( read( fd, &ch, 1 ) )
+        write( 1, &ch, 1 );
+    
+    close(fd);
+    return;
+    
 }
 
 void timeTable() {
     char major, gyoyang;
     
-    fileOpen("timetable.txt");
+    fileOpen("/Users/knuprime104/Desktop/OS/timetable.txt");
+    sleep(1);
+    clear();
+    refresh();
+    fileOpen("/Users/knuprime104/Desktop/OS/timetable2.txt");
+    clear();
+    refresh();
     
     major = getch();
     gyoyang = getch();
@@ -32,6 +42,13 @@ void timeTable() {
     if(atoi(&major) > atoi(&gyoyang)) { // 전공이 더 많을 때
         hp -= 30;
         iq += 30;
+        fileOpen("/Users/knuprime104/Desktop/OS/toomuchmajor.txt");
+        sleep(1);
+        clear();
+        refresh();
+        fileOpen("/Users/knuprime104/Desktop/OS/toomuchmajor2.txt");
+        clear();
+        refresh();
     }
     
     else if(atoi(&major) < atoi(&gyoyang)) { // 교양이 더 많을 때
@@ -137,5 +154,15 @@ void student2() {
     if(hp <= 0) {
         dead();
     }
+
+}
+
+int main() {
+    
+    initscr();
+    
+    timeTable();
+    
+    endwin();
 
 }
