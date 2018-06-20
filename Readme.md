@@ -11,4 +11,4 @@ This Program is linux terminal game named 'GSW survival'. Story is made by sopho
 Player should select one of several distractors. Ending of game will change with player's choice.
 We use Imgae-To-Text program.
 
-![Alt text](GSW_survival.github.io/11.jpg)
+![Alt text](https://github.com/kjsu0209/GSW_survival.github.io/blob/master/11.jpg)
